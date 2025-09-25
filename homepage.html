@@ -1,0 +1,209 @@
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <title>Project V Homepage</title>
+        <style type="text/css">
+
+            body {
+                margin: 0;
+                font-size: 30px;
+            }
+
+            a {
+                text-decoration: none; 
+                color: #000;
+            }
+
+            a:visited {
+                color: #000;
+            }
+
+            .navBar {
+                position: sticky; 
+                display: flex; 
+                /* border: 1px solid #000;  */
+                top: 5; /* margin 'sticks' at 5 pixels from the top*/
+                margin: -65px auto 0; /* where it starts (centered bc of auto) - recall: 3 inputs = top, l/r, bottom*/
+                right: 0;
+                left: 0;
+                bottom: 0;
+                width: 90%;
+                justify-content: space-evenly;
+                font-size: 30px;
+                z-index: 100;
+            }
+
+            .nav_element p  {
+                white-space: nowrap;
+                padding: 0 10px 5px;
+            }
+
+            /* failed keyframes attempt for animation -- i really just needed a transition */
+            /* @keyframes shadowBar {
+                from {box-shadow: 0 0;}
+                to {box-shadow: 0 2px;}
+            } */
+
+            /* animation-name: shadowBar;
+                animation-duration: 0.5s;
+                animation-iteration-count: 1; */
+            
+            /* transition: box-shadow 0.5s; */
+
+            .nav_element    {
+                position: relative; /* makes this like an anchor for the '::after' element which is technically an extra css generated child (sub-element) of this element, ive seen it described online as a 'fake' or pseudo-element */ 
+            }
+
+            .nav_element::after {
+                content: "";        /* need a content tag for the element to render. If we dont want that rendering to be text/letters/symbols, we make the content blank which creates a blank box we can style */
+                position: absolute; /* pins this 'content' to the nav_element parent reference point */
+                bottom: 5px;          /* start this pseudo-element with no width, and 2 height, expand width wuth transition*/
+                left: 0;
+                right: 0;
+                margin: auto;       /* center the content so that it grows in the middle */
+                height: 2px;
+                width: 0;
+                background: rgba(115, 114, 108, 0.5);
+                border-radius: 20px;
+                transition: width 0.4s;
+            }
+
+            /* box-shadow: 0; */
+            .nav_element:hover::after  {
+                width: 100%; /* expand width to 100% of the nav_element*/
+
+            }
+
+            .nav_element:hover {
+                background: radial-gradient(rgba(255,238,140, 0.4),rgba(255,238,140, 0.2));
+                border-radius: 10px;
+            }
+
+            #gradient_banner {
+                position: relative;
+                display: flex;
+                justify-content: center;
+                box-shadow: 0 3px 3px #888;
+                height: 250px;
+                width: 100%;
+                background-image: linear-gradient(to right, #3399ff, rgba(102, 0, 204, 0.5), #ff99ff);
+                background-repeat: no-repeat;
+            }
+
+            #logo_gradient{
+                position: relative;
+                height: 150px;
+                width: 150px;
+                background-image: radial-gradient(#ffee8c, rgba(255,238,140, 0));
+                border-radius: 50%;
+                top: 10px;
+            }
+
+            #banner_logo {
+                position: relative;
+                height: 300px;
+                width: auto;
+                top: -65px;
+                left: -52px;
+                /* border: 2px solid #000; */
+            }
+
+            .split_content {
+                display: flex;
+                justify-content: center;
+                gap: 10px;
+                width: 100%;
+                height: 80vh;
+                border: 1px solid black;
+                margin: 100px 0 0 0;
+                min-width: 600px;
+                flex-shrink: 0;
+            }
+
+            #band_description {
+                width: 60vmax;
+                height: 50%;
+                border: 1px solid black;
+                margin: 5% 0 0 5px;
+                font-size: min(4vh, 3vw); /* viewport with and height make the text size relative to the div box its in vmin specifically makes the text relative to the smalles dimension between width and height im also choosing the minimum of the vh or vw scaling proportionally to fit the picture,. THis took me like  2hours to figure out, and scaling each dimension to be roughly the same as the picture seems to work pretty well*/ 
+                padding: auto;
+            }
+
+            #band_image {
+                width: 60vh;
+                /* min-width: 300px;
+                flex-shrink: 0; /* b/c this is a div in a flex box, I need flex shrink to be 0 for the min width to take effect*/
+                height: 50%;
+                border: 3px solid yellow;
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: center;
+                margin-right: 5px;
+                padding: auto 0 auto 0;
+            }
+
+
+
+        </style>
+    </head>
+
+    <body>
+        
+        <div id="gradient_banner">
+            <div id="logo_gradient">
+                <img id="banner_logo" src="projectVLogo.png">
+            </div>
+        </div>
+
+
+        <div class="navBar">
+
+            <a href="#">
+                <div class="nav_element">
+                    <p>Home</p>
+                </div>
+            </a>
+
+            <a href="" target="_blank">
+                <div class="nav_element">
+                    <p>Contact (or bookings??)</p> <!-- bookings and contacts page -->
+                </div>
+            </a>
+
+            <a href="" target="_blank">
+                <div class="nav_element">
+                    <p>Content</p>
+                </div>
+            </a>
+
+            <a href="" target="_blank">
+                <div class="nav_element">
+                    <p>The Band</p>
+                </div>
+            </a>
+        
+        </div>
+
+        <div class="split_content" id="homepage_content">
+            <div id="band_description">
+                <p>
+                    For the past seven years, Project 5 has been putting the fun 
+                    in funk! From Amy Winehouse to the Allman Brothers, this band 
+                    has added a funky fresh feel to songs old and new. Throughout 
+                    their musical journey, Project 5 has used their 
+                    inspirations, backgrounds, and tastes to culminate a setlist for 
+                    all ears, young and wise. Whether it's rock and roll classics, 
+                    soulful ballads, or deep-cut indie tracks, Project 5 will 
+                    keep your ears on their toes and get your feet groovin!
+                </p>
+            </div>
+            <div id="band_image">
+                <img src="PlaceholderBandPic.jpeg" style="width: 100%; height: auto;">
+            </div>
+
+        </div>
+
+    </body>
+
+</html>
