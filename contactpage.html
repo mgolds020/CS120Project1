@@ -6,6 +6,28 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    
+        <style type="text/css">
+            #insta_logo {
+                    width: 7vmin;
+                    height: auto;
+            }
+
+            .contact_page_content {
+                width: 90%;
+                margin: auto 5%;
+                font-size: 4vmin;
+            }
+
+            #email_input {
+                width: 25%;
+                height: 5%;
+                box-shadow: 0 3px 3px #888;
+                border-radius: 5px;
+                border: none;
+            }
+
+        </style>
     </head>
     <body>
          <div id="gradient_banner">
@@ -45,11 +67,23 @@
 
         <div id="barFollow"></div>
 
+        <div class="contact_page_content">
+            <p>Socials:</p>
+            <a href="https://www.instagram.com/p.roject_v/"><img src="Instagram_icon.png.webp" id="insta_logo"></a>
+        </div>
 
-
-
-
-
+        <div class="contact_page_content">
+            <p>Bookings:</p>
+            <p style="font-size: 3vmin">Contact us at +1 (203) 501-7713</p>
+        </div>
+        
+        <div class="contact_page_content">
+            <form>
+                <label style="font-size: 3vmin" for="email_input">Sign up for our email list to stay up to date!</label>
+                <br/>
+                <input type="text" id="email_input" placeholder="my_email@domain.tld">
+            </form>
+        </div>
 
         <p class="static_bottom_text">Project V 2025</p>
         <hr/>
