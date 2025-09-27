@@ -1,0 +1,121 @@
+body,html {
+    margin: 0;
+    font-size: 30px;
+    background: #fffdd0;
+    font-family: "Poppins", "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, "sans-serif"; 
+}
+
+a {
+    text-decoration: none; 
+    color: #000;
+}
+
+a:visited {
+    color: #000;
+}
+
+
+.static_bottom_text {
+    position: fixed;
+    color: rgba(136, 136, 136, 0.8);
+    bottom: 0;
+    left: 2;
+    font-size: 16px;
+}
+
+.navBar {
+    position: sticky; 
+    display: flex; 
+
+    top: 0; /* margin 'sticks' at 0 pixels from the top - had it as 5 but didnt like */
+    margin: -72px auto 0; /* where it starts (centered bc of auto) - recall: 3 inputs = top, l/r, bottom*/
+    width: 90%;
+    justify-content: space-evenly;
+    font-size: 30px;
+    z-index: 20;
+}
+
+#barFollow {
+    display: block;
+    background-color: rgba(255, 253, 208, 0.95);
+    position: sticky; 
+    top: 0;
+    margin: -102px auto 0; /* where it starts (centered bc of auto) - recall: 3 inputs = top, l/r, bottom*/
+    width: 100%;
+    z-index: 10;
+    height: 100px;
+}
+
+.nav_element {
+    position: relative; /* makes this like an anchor for the '::after' element which is technically an extra css generated child (sub-element) of this element, ive seen it described online as a 'fake' or pseudo-element */
+}
+
+.nav_element::after {
+    content: "";        /* need a content tag for the element to render. If we dont want that rendering to be text/letters/symbols, we make the content blank which creates a blank box we can style */
+    position: absolute; /* pins this 'content' to the nav_element parent reference point */
+    bottom: 5px;          /* start this pseudo-element with no width, and 2 height, expand width wuth transition*/
+    left: 0;
+    right: 0;
+    margin: auto;       /* center the content so that it grows in the middle */
+    height: 2px;
+    width: 0;
+    background: rgba(115, 114, 108, 0.5);
+    border-radius: 20px;
+    transition: width 0.4s;
+}
+
+.nav_element p  {
+    white-space: nowrap;
+    padding: 0 10px 5px;
+}
+
+.nav_element:hover::after  {
+                width: 98%; /* expand width to 100% of the nav_element*/
+
+}
+
+.nav_element:hover {
+    background: radial-gradient(rgba(255,238,140, 0.4),rgba(255,238,140, 0.2));
+    border-radius: 10px;
+}
+
+#gradient_banner {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    box-shadow: 0 3px 3px #888;
+    height: 250px;
+    width: 100%;
+    background-image: linear-gradient(to right, #3399ff, rgba(102, 0, 204, 0.5), #ff99ff);
+    background-repeat: no-repeat;
+    z-index: 15;
+}
+
+#logo_gradient{
+    position: absolute;
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    top: 10px;
+    background: radial-gradient(#ffee8c, rgba(255,238,140, 0));
+    animation-name: logoGradientGlow;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    /* border: 2px solid #b50000; */
+}
+
+@keyframes logoGradientGlow {
+    0% {opacity: 0.5;}
+    50% {opacity: 1;}
+    100% {opacity: 0.5;}
+}
+
+#banner_logo {
+    position: relative;
+    height: 300px;
+    width: auto;
+    top: -55;
+    left: 22;
+    /* border-radius: 50%;
+    border: 2px solid #000; */
+}

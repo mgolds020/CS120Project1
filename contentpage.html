@@ -1,0 +1,142 @@
+<html>
+    <head>
+        <meta charset="utf-8"> 
+        <title>Project V — The Band</title>
+        <link rel="stylesheet" href="consistentElements.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+        <style>
+
+            .content_container{
+                display: block;
+                flex-wrap: wrap;
+                justify-content: center;
+                align-items: center;
+                
+
+            }
+
+            .audio_container {
+                
+                position: relative;
+                display: flex;
+                justify-content: center;
+                gap: 5%;
+                flex-direction: row;
+                flex-wrap: wrap;
+                width: auto;
+            }
+
+            .single_audio {
+                font-size: 25px;
+                margin-bottom: 20px;
+                
+            }
+
+            #content_banner img {
+                
+                float: right;
+                transform: translateY(20%);
+                width: 50vw;
+                height: auto;
+                border: 2px solid #f00;
+                margin: 0 5%;
+
+
+            }
+        </style>
+
+
+    </head>
+    <body>
+         <div id="gradient_banner">
+            <div id="logo_gradient">
+            </div>
+            <img id="banner_logo" src="projectVLogo.png">
+        </div>
+
+
+        <div class="navBar">
+
+            <a href="homepage.html">
+                <div class="nav_element">
+                    <p>Home</p>
+                </div>
+            </a>
+
+            <a href="contanctpage.html">
+                <div class="nav_element">
+                    <p>Contact</p> <!-- bookings and contacts page -->
+                </div>
+            </a>
+
+            <a href="#">
+                <div class="nav_element">
+                    <p>Content</p>
+                </div>
+            </a>
+
+            <a href="thebandpage.html">
+                <div class="nav_element">
+                    <p>The Band</p>
+                </div>
+            </a>
+        
+        </div>
+
+
+
+        <div id="barFollow"></div>
+
+        <br/>
+        <div id="content_container">
+
+            <div id="content_banner">
+                <img src="contentPageBanner.jpg">
+            </div>
+
+
+            <div class="audio_container">
+                <div class="single_audio">
+                    <p>Sour Candy</p>
+                    <audio controls>
+                        <source src="sourCandy.mp3" type="audio/mpeg">
+                        Your browser does not support this audio element.
+                    </audio>
+                </div>
+                <div class="single_audio">
+                    <p>Deal > Franklin's Tower</p>
+                    <audio controls>
+                        <source src="dealfranklinsTower.mp3" type="audio/mpeg">
+                        Your browser does not support this audio element.
+                    </audio>
+                </div>
+                <div class="single_audio">
+                    <p>The Come Up</p>
+                    <audio controls>
+                        <source src="theComeUp.mp3" type="audio/mpeg">
+                        Your browser does not support this audio element.
+                    </audio>
+                </div>
+                <div class="single_audio">
+                    <p>Shakedown Street</p>
+                    <audio controls>
+                        <source src="shakedownStreet.mp3" type="audio/mpeg">
+                        Your browser does not support this audio element.
+                    </audio>
+                </div>
+            </div>
+        </div>
+        
+
+
+
+
+
+
+        <p class="static_bottom_text">Project V 2025</p>
+        
+    </body>
+</html>
