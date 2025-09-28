@@ -12,6 +12,7 @@
 
             .split_content {
                 display: flex;
+                flex-wrap: wrap;
                 justify-content: center;
                 flex-direction: row;
                 gap: 10px;
@@ -22,18 +23,20 @@
             }
 
             #band_description {
+                display: block;
                 width: 60vmax;
                 height: 50%;
                 margin: 0 20px 0 5px;
-                font-size: min(3.5vh, 2.625vw); /* viewport with and height make the text size relative to the div box its in vmin specifically makes the text relative to the smalles dimension between width and height im also choosing the minimum of the vh or vw scaling proportionally to fit the picture,. THis took me like  2hours to figure out, and scaling each dimension to be roughly the same as the picture seems to work pretty well*/ 
+                font-size: min(3.5vh, 2.2vw); /* viewport with and height make the text size relative to the div box its in vmin specifically makes the text relative to the smalles dimension between width and height im also choosing the minimum of the vh or vw scaling proportionally to fit the picture,. THis took me like  2hours to figure out, and scaling each dimension to be roughly the same as the picture seems to work pretty well*/ 
             }
 
             #band_image {
-                display: inline;
-                width: 40%;
-                height: 50%;
-                margin-right: 5px;
+                flex: 0 0 350px; /* helps it not wrap too soon */
+                min-width: 300px;
+                min-height: 300px;
+                display: block;
                 height: auto;
+                margin-right: 5px;
                 background-image: url(PlaceholderBandPic.jpeg);
                 background-size: contain;
                 background-repeat: no-repeat;
